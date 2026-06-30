@@ -35,7 +35,7 @@ internal class DustParticleController : IInitializable
     {
         yield return new WaitUntil(() =>
         {
-            dustPS = Object.FindObjectsOfType<ParticleSystem>().FirstOrDefault(p => p.name == dustParticlesName);
+            dustPS = Object.FindObjectsByType<ParticleSystem>(FindObjectsSortMode.None).FirstOrDefault(p => p.name == dustParticlesName);
             return dustPS != null;
         });
         if (dustPS != null) dustPS.gameObject.SetActive(config.DustParticles);
