@@ -1,5 +1,4 @@
-﻿using BeatSaberMarkupLanguage.Attributes;
-using ParticleOverdrive.Configuration;
+﻿using ParticleOverdrive.Configuration;
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using ParticleOverdrive.Controllers;
@@ -11,27 +10,6 @@ public class SettingsMenu
 {
     private static ParticleConfig config => ParticleConfig.Instance;
 
-    // ReSharper disable UnusedMember.Local
-    [UIValue("slashParticleChoices")]
-    private List<object> slashParticleMultiplierChoices = ParticleMultiplierChoicesList;
-
-    [UIValue("explosionParticleChoices")]
-    private List<object> explosionParticleMultiplierChoices = ParticleMultiplierChoicesList;
-
-    [UIValue("clashParticleChoices")]
-    private List<object> clashParticleMultiplierChoices = ParticleMultiplierChoicesList;
-
-    [UIValue("obstacleParticleChoices")]
-    private List<object> obstacleParticleMultiplierChoices = ParticleMultiplierChoicesList;
-
-    [UIValue("lifetime-values")] 
-    private List<object> lifetimeValues = LifetimeValues;
-    
-    [UIValue("lifetimeChoices")]
-    private List<object> lifetimeChoices = LifetimeValues;
-    // ReSharper restore UnusedMember.Local
-
-    [UIValue("cameraNoiseEnable")]
     public bool CameraGrain
     {
         get => config.CameraGrain;
@@ -42,7 +20,6 @@ public class SettingsMenu
         }
     }
 
-    [UIValue("dustParticleEnableMenu")]
     public bool DustParticlesMenu
     {
         get => config.DustParticlesInMenu;
@@ -52,125 +29,106 @@ public class SettingsMenu
             DustParticleController.MenuInstance?.Initialize();
         }
     }
-    
-    [UIValue("dustParticleEnableGame")]
+
     public bool DustParticlesGame
     {
         get => config.DustParticlesInGame;
         set => config.DustParticlesInGame = value;
     }
 
-    [UIValue("slashParticleChoice")]
     public float SlashParticleMultiplier
     {
         get => config.SlashParticleMultiplier;
         set => config.SlashParticleMultiplier = value;
     }
-
-    [UIValue("slashParticleLifetimeChoice")]
+    
     public float SlashParticleLifetimeMultiplier
     {
         get => config.SlashParticleLifetimeMultiplier;
         set => config.SlashParticleLifetimeMultiplier = value;
     }
 
-    [UIValue("slashParticleSizeChoice")]
     public float SlashParticleSizeMultiplier
     {
         get => config.SlashParticleSizeMultiplier;
         set => config.SlashParticleSizeMultiplier = value;
     }
-
-    [UIValue("explosionParticleChoice")]
+    
     public float ExplosionParticleMultiplier
     {
         get => config.ExplosionParticleMultiplier;
         set => config.ExplosionParticleMultiplier = value;
     }
-
-    [UIValue("explosionParticleLifetimeChoice")]
+    
     public float ExplosionParticleLifetimeMultiplier
     {
         get => config.ExplosionParticleLifetimeMultiplier;
         set => config.ExplosionParticleLifetimeMultiplier = value;
     }
 
-    [UIValue("explosionParticleSizeChoice")]
     public float ExplosionParticleSizeMultiplier
     {
         get => config.ExplosionParticleSizeMultiplier;
         set => config.ExplosionParticleSizeMultiplier = value;
     }
-
-    [UIValue("rainbowParticlesEnable")]
+    
     public bool RainbowParticles
     {
         get => config.RainbowParticles;
         set => config.RainbowParticles = value;
     }
-
-    [UIValue("noteCoreParticlesEnable")]
+    
     public bool NoteCoreParticles
     {
         get => config.NoteCoreParticles;
         set => config.NoteCoreParticles = value;
     }
-
-    [UIValue("clashParticleChoice")]
+    
     public float ClashParticleMultiplier
     {
         get => config.ClashParticleMultiplier;
         set => config.ClashParticleMultiplier = value;
     }
-
-
-    [UIValue("clashParticleLifetimeChoice")]
+    
     public float ClashParticleLifetimeMultiplier
     {
         get => config.ClashParticleLifetimeMultiplier;
         set => config.ClashParticleLifetimeMultiplier = value;
     }
-
-    [UIValue("clashParticleSizeChoice")]
+    
     public float ClashParticleSizeMultiplier
     {
         get => config.ClashParticleSizeMultiplier;
         set => config.ClashParticleSizeMultiplier = value;
     }
-
-    [UIValue("clashGlowEnable")]
+    
     public bool ClashGlow
     {
         get => config.ClashGlow;
         set => config.ClashGlow = value;
     }
-
-    [UIValue("obstacleParticleChoice")]
+    
     public float ObstacleParticleMultiplier
     {
         get => config.ObstacleParticleMultiplier;
         set => config.ObstacleParticleMultiplier = value;
     }
-         
-
-    [UIValue("obstacleParticleLifetimeChoice")]
+    
     public float ObstacleParticleLifetimeMultiplier
     {
         get => config.ObstacleParticleLifetimeMultiplier;
         set => config.ObstacleParticleLifetimeMultiplier = value;
     }
-
-    [UIValue("obstacleParticleSizeChoice")]
+    
     public float ObstacleParticleSizeMultiplier
     {
         get => config.ObstacleParticleSizeMultiplier;
         set => config.ObstacleParticleSizeMultiplier = value;
     }
 
-    [UIAction("multiplierFormatter")]
     public string MultiplierDisplay(float multiplier) => $"{multiplier * 100f}%";
     
-    private static readonly List<object> ParticleMultiplierChoicesList =
+    [UsedImplicitly] private readonly List<object> ParticleMultiplierChoicesList =
     [
         0f,
         1f,
@@ -249,7 +207,7 @@ public class SettingsMenu
         200f
     ];
         
-    private static readonly List<object> LifetimeValues =
+    [UsedImplicitly] private readonly List<object> LifetimeValues =
     [
         0f,
         0.1f,

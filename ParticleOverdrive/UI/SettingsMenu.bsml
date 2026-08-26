@@ -8,9 +8,9 @@
     <settings-container>
       <clickable-text text='⮌ Back' align='Left' click-event='back' />
       
-      <bool-setting text='Camera Noise' value='cameraNoiseEnable' apply-on-change='true'/>
-      <bool-setting text='Dust Particles (Menu)' value='dustParticleEnableMenu' apply-on-change='true'/>
-      <bool-setting text='Dust Particles (In-Game)' value='dustParticleEnableGame' apply-on-change='true'/>
+      <bool-setting text='Camera Noise' value='CameraGrain' apply-on-change='true'/>
+      <bool-setting text='Dust Particles (Menu)' value='DustParticlesMenu' apply-on-change='true'/>
+      <bool-setting text='Dust Particles (In-Game)' value='DustParticlesGame' apply-on-change='true'/>
     </settings-container>
   </settings-submenu>
   
@@ -19,14 +19,14 @@
     <settings-container>
       <clickable-text text='⮌ Back' align='Left' click-event='back' />
       
-      <list-setting text='Slash Particles' value='slashParticleChoice' choices='slashParticleChoices' formatter='multiplierFormatter' apply-on-change='true'/>
-      <list-setting text='Slash Particle Lifetime' value='slashParticleLifetimeChoice' choices='lifetimeChoices' formatter='multiplierFormatter' apply-on-change='true'/>
-      <list-setting text='Slash Particle Size' value='slashParticleSizeChoice' choices='lifetimeChoices' formatter='multiplierFormatter' apply-on-change='true'/>
-      <list-setting text='Explosion Particles' value='explosionParticleChoice' choices='explosionParticleChoices' formatter='multiplierFormatter' apply-on-change='true'/>
-      <list-setting text='Explosion Particle Lifetime' value='explosionParticleLifetimeChoice' choices='lifetimeChoices' formatter='multiplierFormatter' apply-on-change='true'/>
-      <list-setting text='Explosion Particle Size' value='explosionParticleSizeChoice' choices='lifetimeChoices' formatter='multiplierFormatter' apply-on-change='true'/>
-      <bool-setting text='Core Particles' value='noteCoreParticlesEnable' apply-on-change='true'/>
-      <bool-setting text='Rainbow Particles' value='rainbowParticlesEnable' apply-on-change='true'/>
+      <list-setting text='Slash Particles' value='SlashParticleMultiplier' choices='ParticleMultiplierChoicesList' formatter='MultiplierDisplay' apply-on-change='true'/>
+      <list-setting text='Slash Particle Lifetime' value='SlashParticleLifetimeMultiplier' choices='LifetimeValues' formatter='MultiplierDisplay' apply-on-change='true'/>
+      <list-setting text='Slash Particle Size' value='SlashParticleSizeMultiplier' choices='LifetimeValues' formatter='MultiplierDisplay' apply-on-change='true'/>
+      <list-setting text='Explosion Particles' value='ExplosionParticleMultiplier' choices='ParticleMultiplierChoicesList' formatter='MultiplierDisplay' apply-on-change='true'/>
+      <list-setting text='Explosion Particle Lifetime' value='ExplosionParticleLifetimeMultiplier' choices='LifetimeValues' formatter='MultiplierDisplay' apply-on-change='true'/>
+      <list-setting text='Explosion Particle Size' value='ExplosionParticleSizeMultiplier' choices='LifetimeValues' formatter='MultiplierDisplay' apply-on-change='true'/>
+      <bool-setting text='Core Particles' value='NoteCoreParticles' apply-on-change='true'/>
+      <bool-setting text='Rainbow Particles' value='RainbowParticles' apply-on-change='true'/>
     </settings-container>
   </settings-submenu>
   
@@ -35,10 +35,10 @@
     <settings-container>
       <clickable-text text='⮌ Back' align='Left' click-event='back' />
       
-      <list-setting text='Clash Particles' value='clashParticleChoice' choices='clashParticleChoices' formatter='multiplierFormatter' apply-on-change='true'/>
-      <list-setting text='Clash Particles Lifetime' value='clashParticleLifetimeChoice' choices='lifetimeChoices' formatter='multiplierFormatter' apply-on-change='true'/>
-      <list-setting text='Clash Particles Size' value='clashParticleSizeChoice' choices='lifetimeChoices' formatter='multiplierFormatter' apply-on-change='true'/>
-      <bool-setting text='Clash Glow' value='clashGlowEnable' apply-on-change='true'/>
+      <list-setting text='Clash Particles' value='ClashParticleMultiplier' choices='ParticleMultiplierChoicesList' formatter='MultiplierDisplay' apply-on-change='true'/>
+      <list-setting text='Clash Particles Lifetime' value='ClashParticleLifetimeMultiplier' choices='LifetimeValues' formatter='MultiplierDisplay' apply-on-change='true'/>
+      <list-setting text='Clash Particles Size' value='ClashParticleSizeMultiplier' choices='LifetimeValues' formatter='MultiplierDisplay' apply-on-change='true'/>
+      <bool-setting text='Clash Glow' value='ClashGlow' apply-on-change='true'/>
     </settings-container>
   </settings-submenu>
   
@@ -47,9 +47,9 @@
     <settings-container>
       <clickable-text text='⮌ Back' align='Left' click-event='back' />
       
-      <list-setting text='Wall Particles' value='obstacleParticleChoice' choices='obstacleParticleChoices' formatter='multiplierFormatter' apply-on-change='true'/>
-      <list-setting text='Wall Particles Lifetime' value='obstacleParticleLifetimeChoice' choices='lifetimeChoices' formatter='multiplierFormatter' apply-on-change='true'/>
-      <list-setting text='Wall Particles Size' value='obstacleParticleSizeChoice' choices='lifetimeChoices' formatter='multiplierFormatter' apply-on-change='true'/>
+      <list-setting text='Wall Particles' value='ObstacleParticleMultiplier' choices='ParticleMultiplierChoicesList' formatter='MultiplierDisplay' apply-on-change='true'/>
+      <list-setting text='Wall Particles Lifetime' value='ObstacleParticleLifetimeMultiplier' choices='LifetimeValues' formatter='MultiplierDisplay' apply-on-change='true'/>
+      <list-setting text='Wall Particles Size' value='ObstacleParticleSizeMultiplier' choices='LifetimeValues' formatter='MultiplierDisplay' apply-on-change='true'/>
     </settings-container>
   </settings-submenu>
   
