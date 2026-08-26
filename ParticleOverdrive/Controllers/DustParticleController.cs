@@ -15,13 +15,18 @@ internal class DustParticleController : IInitializable
     private readonly string dustParticlesName;
     
     internal static DustParticleController? MenuInstance { get; private set; }
+    private readonly bool _isMenu;
     
     private DustParticleController(ICoroutineStarter coroutineStarter, [InjectOptional] EnvironmentSceneSetupData? environmentData)
     {
         MenuInstance ??= this;
+        if (environmentData == null)
+        {
+            _isMenu = true;
+        }
         
         this.coroutineStarter = coroutineStarter;
-        dustParticlesName = environmentData == null ? "DustPS" : environmentData.environmentInfo.serializedName switch
+        dustParticlesName = environmentData?.environmentInfo.serializedName switch
         {
             "BritneyEnvironment" => "DustBritney",
             _ => "DustPS"
@@ -45,6 +50,6 @@ internal class DustParticleController : IInitializable
                 .FirstOrDefault(p => p.name == dustParticlesName);
             return dustPS != null;
         });
-        if (dustPS != null) dustPS.gameObject.SetActive(config.DustParticles);
+        if (dustPS != null) dustPS.gameObject.SetActive(_isMenu ? config.DustParticlesInMenu : config.DustParticlesInGame);
     }
 }

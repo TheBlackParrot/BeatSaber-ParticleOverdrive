@@ -42,15 +42,22 @@ public class SettingsMenu
         }
     }
 
-    [UIValue("dustParticleEnable")]
-    public bool DustParticles
+    [UIValue("dustParticleEnableMenu")]
+    public bool DustParticlesMenu
     {
-        get => config.DustParticles;
+        get => config.DustParticlesInMenu;
         set
         {
-            config.DustParticles = value;
+            config.DustParticlesInMenu = value;
             DustParticleController.MenuInstance?.Initialize();
         }
+    }
+    
+    [UIValue("dustParticleEnableGame")]
+    public bool DustParticlesGame
+    {
+        get => config.DustParticlesInGame;
+        set => config.DustParticlesInGame = value;
     }
 
     [UIValue("slashParticleChoice")]

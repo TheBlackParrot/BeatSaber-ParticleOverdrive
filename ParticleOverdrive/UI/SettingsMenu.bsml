@@ -9,7 +9,8 @@
       <clickable-text text='⮌ Back' align='Left' click-event='back' />
       
       <bool-setting text='Camera Noise' value='cameraNoiseEnable' apply-on-change='true'/>
-      <bool-setting text='Global Dust Particles' value='dustParticleEnable' apply-on-change='true'/>
+      <bool-setting text='Dust Particles (Menu)' value='dustParticleEnableMenu' apply-on-change='true'/>
+      <bool-setting text='Dust Particles (In-Game)' value='dustParticleEnableGame' apply-on-change='true'/>
     </settings-container>
   </settings-submenu>
   

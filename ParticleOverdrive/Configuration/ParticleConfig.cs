@@ -11,7 +11,8 @@ internal class ParticleConfig
 {
     internal static ParticleConfig Instance { get; set; } = null!;
 
-    public virtual bool DustParticles { get; set; } = true;
+    public virtual bool DustParticlesInMenu { get; set; } = true;
+    public virtual bool DustParticlesInGame { get; set; } = true;
     public virtual bool CameraGrain { get; set; } = true;
 
     public virtual float SlashParticleMultiplier { get; set; } = 1f;
