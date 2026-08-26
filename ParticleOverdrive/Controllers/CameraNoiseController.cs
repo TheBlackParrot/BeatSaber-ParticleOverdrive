@@ -18,7 +18,7 @@ internal class CameraNoiseController : IInitializable
         MenuInstance ??= this;
         
         blankNoiseTexture = Texture2D.blackTexture;
-        var pixelColors = blankNoiseTexture.GetPixels32();
+        Color32[] pixelColors = blankNoiseTexture.GetPixels32();
         for (int i = 0; i < pixelColors.Length; i++) pixelColors[i] = Color.black;
         blankNoiseTexture.SetPixels32(pixelColors);
         blankNoiseTexture.Apply();
