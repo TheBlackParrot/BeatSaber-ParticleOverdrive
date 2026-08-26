@@ -2,6 +2,7 @@
 using ParticleOverdrive.Configuration;
 using System.Collections.Generic;
 using JetBrains.Annotations;
+using ParticleOverdrive.Controllers;
 
 namespace ParticleOverdrive.UI;
 
@@ -34,14 +35,22 @@ public class SettingsMenu
     public bool CameraGrain
     {
         get => config.CameraGrain;
-        set => config.CameraGrain = value;
+        set
+        {
+            config.CameraGrain = value;
+            CameraNoiseController.MenuInstance?.SetCameraNoiseActive(value);
+        }
     }
 
     [UIValue("dustParticleEnable")]
     public bool DustParticles
     {
         get => config.DustParticles;
-        set => config.DustParticles = value;
+        set
+        {
+            config.DustParticles = value;
+            DustParticleController.MenuInstance?.Initialize();
+        }
     }
 
     [UIValue("slashParticleChoice")]

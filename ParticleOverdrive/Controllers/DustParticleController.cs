@@ -14,8 +14,12 @@ internal class DustParticleController : IInitializable
     private readonly ICoroutineStarter coroutineStarter;
     private readonly string dustParticlesName;
     
+    internal static DustParticleController? MenuInstance { get; private set; }
+    
     private DustParticleController(ICoroutineStarter coroutineStarter, [InjectOptional] EnvironmentSceneSetupData? environmentData)
     {
+        MenuInstance ??= this;
+        
         this.coroutineStarter = coroutineStarter;
         dustParticlesName = environmentData == null ? "DustPS" : environmentData.environmentInfo.serializedName switch
         {
@@ -28,6 +32,7 @@ internal class DustParticleController : IInitializable
 
     public void Initialize()
     {
+        Plugin.Log.Info(dustParticlesName);
         // only has to be done in a coroutine because of MultiPlayer being like a frame too early...
         coroutineStarter.StartCoroutine(InitializeCoroutine());
     }
@@ -36,7 +41,8 @@ internal class DustParticleController : IInitializable
     {
         yield return new WaitUntil(() =>
         {
-            dustPS = Object.FindObjectsByType<ParticleSystem>(FindObjectsSortMode.None).FirstOrDefault(p => p.name == dustParticlesName);
+            dustPS = Object.FindObjectsByType<ParticleSystem>(FindObjectsInactive.Include, FindObjectsSortMode.None)
+                .FirstOrDefault(p => p.name == dustParticlesName);
             return dustPS != null;
         });
         if (dustPS != null) dustPS.gameObject.SetActive(config.DustParticles);

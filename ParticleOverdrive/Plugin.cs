@@ -14,9 +14,12 @@ namespace ParticleOverdrive;
 [UsedImplicitly]
 public class Plugin
 {
+    internal static IPALogger Log { get; private set; } = null!;
+    
     [Init]
     public Plugin(Zenjector zenjector, PluginMetadata metadata, IPALogger logger, IPAConfig ipaConfig)
     {
+        Log = logger;
         zenjector.UseLogger(logger);
         
         ParticleConfig c = ipaConfig.Generated<ParticleConfig>();

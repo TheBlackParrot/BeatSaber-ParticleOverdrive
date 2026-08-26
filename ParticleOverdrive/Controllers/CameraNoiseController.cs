@@ -11,8 +11,12 @@ internal class CameraNoiseController : IInitializable
     private static ParticleConfig config => ParticleConfig.Instance;
     private readonly Texture2D blankNoiseTexture;
 
+    internal static CameraNoiseController? MenuInstance { get; private set; }
+
     private CameraNoiseController()
     {
+        MenuInstance ??= this;
+        
         blankNoiseTexture = Texture2D.blackTexture;
         var pixelColors = blankNoiseTexture.GetPixels32();
         for (int i = 0; i < pixelColors.Length; i++) pixelColors[i] = Color.black;
@@ -29,7 +33,7 @@ internal class CameraNoiseController : IInitializable
         SetCameraNoiseActive(config.CameraGrain);
     }
 
-    public void SetCameraNoiseActive(bool active)
+    internal void SetCameraNoiseActive(bool active)
     {
         if (ditheringUpdater != null)
         {
