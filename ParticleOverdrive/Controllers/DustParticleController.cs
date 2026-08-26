@@ -37,7 +37,6 @@ internal class DustParticleController : IInitializable
 
     public void Initialize()
     {
-        Plugin.Log.Info(dustParticlesName);
         // only has to be done in a coroutine because of MultiPlayer being like a frame too early...
         coroutineStarter.StartCoroutine(InitializeCoroutine());
     }
