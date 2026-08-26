@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- This file contains project properties used by the build. -->
 <Project>
+    <PropertyGroup Condition="$(Configuration.Contains('1.39.1'))">
+        <GameVersion>1.39.1</GameVersion>
+    </PropertyGroup>
 
     <!-- Plugin Metadata -->
     <PropertyGroup>
         <PluginId>ParticleOverdrive</PluginId>
         <PluginName>ParticleOverdrive</PluginName>
         <Authors>qqrz997, TheBlackParrot</Authors>
-        <Version>1.14.0</Version>
-        <GameVersion>1.44.1</GameVersion>
+        <Version>1.14.0+$(GameVersion)</Version>
         <Description>A mod for adjusting particle settings in Beat Saber</Description>
         <ProjectSource>https://github.com/TheBlackParrot/BeatSaber-ParticleOverdrive</ProjectSource>
     </PropertyGroup>
