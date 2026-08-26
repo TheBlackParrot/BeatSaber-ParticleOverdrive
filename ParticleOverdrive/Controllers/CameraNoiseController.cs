@@ -1,17 +1,18 @@
-﻿using UnityEngine;
-using ParticleOverdrive.Misc;
+﻿using JetBrains.Annotations;
+using UnityEngine;
+using ParticleOverdrive.Configuration;
 using Zenject;
 
 namespace ParticleOverdrive.Controllers;
 
+[UsedImplicitly]
 internal class CameraNoiseController : IInitializable
 {
-    private readonly ParticleConfig config;
+    private static ParticleConfig config => ParticleConfig.Instance;
     private readonly Texture2D blankNoiseTexture;
 
-    private CameraNoiseController(ParticleConfig config)
+    private CameraNoiseController()
     {
-        this.config = config;
         blankNoiseTexture = Texture2D.blackTexture;
         var pixelColors = blankNoiseTexture.GetPixels32();
         for (int i = 0; i < pixelColors.Length; i++) pixelColors[i] = Color.black;

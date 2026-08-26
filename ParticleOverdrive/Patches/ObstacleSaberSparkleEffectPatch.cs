@@ -1,17 +1,11 @@
-﻿using ParticleOverdrive.Misc;
+﻿using ParticleOverdrive.Configuration;
 using SiraUtil.Affinity;
-using UnityEngine;
 
 namespace ParticleOverdrive.Patches;
 
 internal class ObstacleSaberSparkleEffectPatch : IAffinity
 {
-    private readonly ParticleConfig config;
-
-    private ObstacleSaberSparkleEffectPatch(ParticleConfig config)
-    {
-        this.config = config;
-    }
+    private static ParticleConfig config => ParticleConfig.Instance;
 
     [AffinityPatch(typeof(ObstacleSaberSparkleEffect), nameof(ObstacleSaberSparkleEffect.Awake))]
     public void Postfix(ObstacleSaberSparkleEffect __instance)

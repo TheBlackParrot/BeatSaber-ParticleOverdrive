@@ -1,19 +1,27 @@
 ﻿using IPA;
+using IPA.Config.Stores;
 using ParticleOverdrive.Installers;
 using SiraUtil.Zenject;
 using IPA.Loader;
+using JetBrains.Annotations;
+using ParticleOverdrive.Configuration;
 using IPALogger = IPA.Logging.Logger;
+using IPAConfig = IPA.Config.Config;
 
 namespace ParticleOverdrive;
 
 [Plugin(RuntimeOptions.SingleStartInit), NoEnableDisable]
+[UsedImplicitly]
 public class Plugin
 {
     [Init]
-    public Plugin(Zenjector zenjector, PluginMetadata metadata, IPALogger logger)
+    public Plugin(Zenjector zenjector, PluginMetadata metadata, IPALogger logger, IPAConfig ipaConfig)
     {
         zenjector.UseLogger(logger);
-        zenjector.Install<AppInstaller>(Location.App);
+        
+        ParticleConfig c = ipaConfig.Generated<ParticleConfig>();
+        ParticleConfig.Instance = c;
+        
         zenjector.Install<MenuInstaller>(Location.Menu);
         zenjector.Install<PlayerInstaller>(Location.Player);
         zenjector.Install<WorldParticlesInstaller>(Location.Menu | Location.Player);

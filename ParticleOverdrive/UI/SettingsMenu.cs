@@ -1,18 +1,16 @@
 ﻿using BeatSaberMarkupLanguage.Attributes;
-using ParticleOverdrive.Misc;
+using ParticleOverdrive.Configuration;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 
 namespace ParticleOverdrive.UI;
 
+[UsedImplicitly]
 public class SettingsMenu
 {
-    private readonly ParticleConfig config;
+    private static ParticleConfig config => ParticleConfig.Instance;
 
-    private SettingsMenu(ParticleConfig config)
-    {
-        this.config = config;
-    }
-
+    // ReSharper disable UnusedMember.Local
     [UIValue("slashParticleChoices")]
     private List<object> slashParticleMultiplierChoices = ParticleMultiplierChoicesList;
 
@@ -30,6 +28,7 @@ public class SettingsMenu
     
     [UIValue("lifetimeChoices")]
     private List<object> lifetimeChoices = LifetimeValues;
+    // ReSharper restore UnusedMember.Local
 
     [UIValue("cameraNoiseEnable")]
     public bool CameraGrain

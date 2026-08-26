@@ -6,11 +6,11 @@
     <PropertyGroup>
         <PluginId>ParticleOverdrive</PluginId>
         <PluginName>ParticleOverdrive</PluginName>
-        <Authors>qqrz997</Authors>
-        <Version>1.13.1</Version>
-        <GameVersion>1.37.4</GameVersion>
+        <Authors>qqrz997, TheBlackParrot</Authors>
+        <Version>1.14.0</Version>
+        <GameVersion>1.44.1</GameVersion>
         <Description>A mod for adjusting particle settings in Beat Saber</Description>
-        <ProjectSource>https://github.com/qqrz997/BeatSaber-ParticleOverdrive</ProjectSource>
+        <ProjectSource>https://github.com/TheBlackParrot/BeatSaber-ParticleOverdrive</ProjectSource>
     </PropertyGroup>
 
     <!-- Plugin Dependencies -->

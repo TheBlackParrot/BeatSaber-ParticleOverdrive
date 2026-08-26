@@ -1,18 +1,11 @@
-﻿using ParticleOverdrive.Misc;
+﻿using ParticleOverdrive.Configuration;
 using SiraUtil.Affinity;
-using UnityEngine;
-
 
 namespace ParticleOverdrive.Patches;
 
 public class SaberClashEffectPatch : IAffinity
 {
-    private readonly ParticleConfig config;
-
-    private SaberClashEffectPatch(ParticleConfig config)
-    {
-        this.config = config;
-    }
+    private static ParticleConfig config => ParticleConfig.Instance;
 
     [AffinityPatch(typeof(SaberClashEffect), nameof(SaberClashEffect.Start))]
     public void Postfix(SaberClashEffect __instance)

@@ -1,4 +1,4 @@
-﻿using ParticleOverdrive.Misc;
+﻿using ParticleOverdrive.Configuration;
 using SiraUtil.Affinity;
 using UnityEngine;
 
@@ -6,12 +6,7 @@ namespace ParticleOverdrive.Patches;
 
 internal class NoteCutParticlesEffectPatch : IAffinity
 {
-    private readonly ParticleConfig config;
-
-    private NoteCutParticlesEffectPatch(ParticleConfig config)
-    {
-        this.config = config;
-    }
+    private static ParticleConfig config => ParticleConfig.Instance;
 
     [AffinityPatch(typeof(NoteCutCoreEffectsSpawner), nameof(NoteCutCoreEffectsSpawner.Start))]
     public void Initialize(NoteCutCoreEffectsSpawner __instance)

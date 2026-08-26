@@ -1,20 +1,21 @@
-﻿using ParticleOverdrive.Misc;
+﻿using ParticleOverdrive.Configuration;
 using System.Collections;
 using System.Linq;
+using JetBrains.Annotations;
 using UnityEngine;
 using Zenject;
 
 namespace ParticleOverdrive.Controllers;
 
+[UsedImplicitly]
 internal class DustParticleController : IInitializable
 {
-    private readonly ParticleConfig config;
+    private static ParticleConfig config => ParticleConfig.Instance;
     private readonly ICoroutineStarter coroutineStarter;
     private readonly string dustParticlesName;
     
-    private DustParticleController(ParticleConfig config, ICoroutineStarter coroutineStarter, [InjectOptional] EnvironmentSceneSetupData? environmentData)
+    private DustParticleController(ICoroutineStarter coroutineStarter, [InjectOptional] EnvironmentSceneSetupData? environmentData)
     {
-        this.config = config;
         this.coroutineStarter = coroutineStarter;
         dustParticlesName = environmentData == null ? "DustPS" : environmentData.environmentInfo.serializedName switch
         {
