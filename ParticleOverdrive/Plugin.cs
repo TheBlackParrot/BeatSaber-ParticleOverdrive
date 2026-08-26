@@ -14,6 +14,7 @@ namespace ParticleOverdrive;
 [UsedImplicitly]
 public class Plugin
 {
+    // ReSharper disable once UnusedAutoPropertyAccessor.Global
     internal static IPALogger Log { get; private set; } = null!;
     
     [Init]
