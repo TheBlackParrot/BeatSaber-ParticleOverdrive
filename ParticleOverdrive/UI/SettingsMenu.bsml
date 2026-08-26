@@ -1,56 +1,72 @@
-﻿<settings-container xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:noNamespaceSchemaLocation='https://monkeymanboy.github.io/BSML-Docs/BSMLSchema.xsd'>
-  <horizontal pref-width='90'>
-    <text text='Particle Overdrive Settings' font-size='5' align='Center'/>
-  </horizontal>
-  
+﻿<settings-container xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:noNamespaceSchemaLocation='https://monkeymanboy.github.io/BSML-Docs/BSMLSchema.xsd'
+                    id="ParticleOverdriveSettingsContainer" name="ParticleOverdriveSettingsContainer">
   <!--World Particles-->
-  <settings-submenu text='→ World Particles...'>
-    <settings-container>
-      <clickable-text text='⮌ Back' align='Left' click-event='back' />
-      
-      <bool-setting text='Camera Noise' value='CameraGrain' apply-on-change='true'/>
-      <bool-setting text='Dust Particles (Menu)' value='DustParticlesMenu' apply-on-change='true'/>
-      <bool-setting text='Dust Particles (In-Game)' value='DustParticlesGame' apply-on-change='true'/>
-    </settings-container>
-  </settings-submenu>
+  <bool-setting text='Camera Noise' value='CameraGrain' apply-on-change='true'/>
+  <bool-setting text='Dust Particles (Menu)' value='DustParticlesMenu' apply-on-change='true'/>
+  <bool-setting text='Dust Particles (In-Game)' value='DustParticlesGame' apply-on-change='true'/>
+  
+  <horizontal><text text="------" font-size="3" color="#00000000"/></horizontal>
   
   <!--Note Cut Particles-->
-  <settings-submenu text='→ Note Cut Particles...'>
-    <settings-container>
-      <clickable-text text='⮌ Back' align='Left' click-event='back' />
-      
-      <list-setting text='Slash Particles' value='SlashParticleMultiplier' choices='ParticleMultiplierChoicesList' formatter='MultiplierDisplay' apply-on-change='true'/>
-      <list-setting text='Slash Particle Lifetime' value='SlashParticleLifetimeMultiplier' choices='LifetimeValues' formatter='MultiplierDisplay' apply-on-change='true'/>
-      <list-setting text='Slash Particle Size' value='SlashParticleSizeMultiplier' choices='LifetimeValues' formatter='MultiplierDisplay' apply-on-change='true'/>
-      <list-setting text='Explosion Particles' value='ExplosionParticleMultiplier' choices='ParticleMultiplierChoicesList' formatter='MultiplierDisplay' apply-on-change='true'/>
-      <list-setting text='Explosion Particle Lifetime' value='ExplosionParticleLifetimeMultiplier' choices='LifetimeValues' formatter='MultiplierDisplay' apply-on-change='true'/>
-      <list-setting text='Explosion Particle Size' value='ExplosionParticleSizeMultiplier' choices='LifetimeValues' formatter='MultiplierDisplay' apply-on-change='true'/>
-      <bool-setting text='Core Particles' value='NoteCoreParticles' apply-on-change='true'/>
-      <bool-setting text='Rainbow Particles' value='RainbowParticles' apply-on-change='true'/>
-    </settings-container>
-  </settings-submenu>
+  <slider-setting text='Slash Particles' value='SlashParticleMultiplier'
+                  min="0" max="100" increment="0.25"
+                  formatter='MultiplierDisplay' apply-on-change='true'
+                  show-buttons="true"/>
+  <slider-setting text='Slash Particle Lifetime' value='SlashParticleLifetimeMultiplier'
+                  min="0" max="100" increment="0.25"
+                  formatter='MultiplierDisplay' apply-on-change='true'
+                  show-buttons="true"/>
+  <slider-setting text='Slash Particle Size' value='SlashParticleSizeMultiplier'
+                  min="0" max="100" increment="0.25"
+                  formatter='MultiplierDisplay' apply-on-change='true'
+                  show-buttons="true"/>
+  <slider-setting text='Explosion Particles' value='ExplosionParticleMultiplier'
+                  min="0" max="100" increment="0.25"
+                  formatter='MultiplierDisplay' apply-on-change='true'
+                  show-buttons="true"/>
+  <slider-setting text='Explosion Particle Lifetime' value='ExplosionParticleLifetimeMultiplier'
+                  min="0" max="100" increment="0.25"
+                  formatter='MultiplierDisplay' apply-on-change='true'
+                  show-buttons="true"/>
+  <slider-setting text='Explosion Particle Size' value='ExplosionParticleSizeMultiplier'
+                  min="0" max="100" increment="0.25"
+                  formatter='MultiplierDisplay' apply-on-change='true'
+                  show-buttons="true"/>
+  
+  <bool-setting text='Core Particles' value='NoteCoreParticles' apply-on-change='true'/>
+  <bool-setting text='Rainbow Particles' value='RainbowParticles' apply-on-change='true'/>
+
+  <horizontal><text text="------" font-size="3" color="#00000000"/></horizontal>
   
   <!--Saber Clash Particles-->
-  <settings-submenu text='→ Saber Clash Particles...'>
-    <settings-container>
-      <clickable-text text='⮌ Back' align='Left' click-event='back' />
-      
-      <list-setting text='Clash Particles' value='ClashParticleMultiplier' choices='ParticleMultiplierChoicesList' formatter='MultiplierDisplay' apply-on-change='true'/>
-      <list-setting text='Clash Particles Lifetime' value='ClashParticleLifetimeMultiplier' choices='LifetimeValues' formatter='MultiplierDisplay' apply-on-change='true'/>
-      <list-setting text='Clash Particles Size' value='ClashParticleSizeMultiplier' choices='LifetimeValues' formatter='MultiplierDisplay' apply-on-change='true'/>
-      <bool-setting text='Clash Glow' value='ClashGlow' apply-on-change='true'/>
-    </settings-container>
-  </settings-submenu>
+  <slider-setting text='Clash Particles' value='ClashParticleMultiplier'
+                  min="0" max="100" increment="0.25"
+                  formatter='MultiplierDisplay' apply-on-change='true'
+                  show-buttons="true"/>
+  <slider-setting text='Clash Particles Lifetime' value='ClashParticleLifetimeMultiplier'
+                  min="0" max="100" increment="0.25"
+                  formatter='MultiplierDisplay' apply-on-change='true'
+                  show-buttons="true"/>
+  <slider-setting text='Clash Particles Size' value='ClashParticleSizeMultiplier'
+                  min="0" max="100" increment="0.25"
+                  formatter='MultiplierDisplay' apply-on-change='true'
+                  show-buttons="true"/>
+  
+  <bool-setting text='Clash Glow' value='ClashGlow' apply-on-change='true'/>
+
+  <horizontal><text text="------" font-size="3" color="#00000000"/></horizontal>
   
   <!-- Obstacle Saber Particles-->
-  <settings-submenu text='→ Saber Wall Particles...'>
-    <settings-container>
-      <clickable-text text='⮌ Back' align='Left' click-event='back' />
-      
-      <list-setting text='Wall Particles' value='ObstacleParticleMultiplier' choices='ParticleMultiplierChoicesList' formatter='MultiplierDisplay' apply-on-change='true'/>
-      <list-setting text='Wall Particles Lifetime' value='ObstacleParticleLifetimeMultiplier' choices='LifetimeValues' formatter='MultiplierDisplay' apply-on-change='true'/>
-      <list-setting text='Wall Particles Size' value='ObstacleParticleSizeMultiplier' choices='LifetimeValues' formatter='MultiplierDisplay' apply-on-change='true'/>
-    </settings-container>
-  </settings-submenu>
-  
+  <slider-setting text='Wall Particles' value='ObstacleParticleMultiplier'
+                  min="0" max="100" increment="0.25"
+                  formatter='MultiplierDisplay' apply-on-change='true'
+                  show-buttons="true"/>
+  <slider-setting text='Wall Particles Lifetime' value='ObstacleParticleLifetimeMultiplier'
+                  min="0" max="100" increment="0.25"
+                  formatter='MultiplierDisplay' apply-on-change='true'
+                  show-buttons="true"/>
+  <slider-setting text='Wall Particles Size' value='ObstacleParticleSizeMultiplier'
+                  min="0" max="100" increment="0.25"
+                  formatter='MultiplierDisplay' apply-on-change='true'
+                  show-buttons="true"/>
 </settings-container>
